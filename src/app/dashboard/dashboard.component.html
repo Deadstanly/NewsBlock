@@ -1,0 +1,30 @@
+
+  <mat-toolbar color="primary">
+    <mat-menu #menu="matMenu">
+      <button [routerLink]="'news'" mat-menu-item>
+        <mat-icon class="fas fa-rss"></mat-icon>
+        <span>News</span>
+      </button>
+      <button (click)="logOut()" mat-menu-item>
+        <mat-icon class="fas fa-sign-out-alt"></mat-icon>
+        <span>Log out</span>
+      </button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="menu"  class="example-icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My Angular App</span>
+
+  </mat-toolbar>
+
+
+
+
+
+
+
+
+
+<router-outlet></router-outlet>
+
+

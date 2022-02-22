@@ -1,0 +1,16 @@
+
+<div class="container">
+    <form [formGroup]="myForm" class="login-form">
+      <h1 class="title">Log In</h1>
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" />
+      </mat-form-field>
+      <button (click)="registration()" mat-button color="primary">Registration</button>
+      <button (click)="submit()" mat-button color="primary">Submit</button>
+    </form>
+</div>

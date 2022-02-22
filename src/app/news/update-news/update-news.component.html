@@ -1,0 +1,17 @@
+<form [formGroup]="myFormUpdate" class="form-menu">
+  <mat-form-field appearance="fill">
+    <mat-label>title</mat-label>
+    <input matInput formControlName="title">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>link</mat-label>
+    <input matInput formControlName="link">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>country</mat-label>
+    <input matInput formControlName="country">
+  </mat-form-field>
+  <button (click)="submitUpdate()" class="btn-update" mat-raised-button>Update news</button>
+  <button (click)="cancel()" class="btn-update" mat-raised-button>Cancel</button>
+</form>
+

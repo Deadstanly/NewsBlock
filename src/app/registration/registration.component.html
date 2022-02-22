@@ -1,0 +1,24 @@
+<div class="container">
+  <form [formGroup]="myForm" class="registration-form">
+    <h1 class="title">Registration</h1>
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>secondName</mat-label>
+      <input matInput formControlName="secondName" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" />
+    </mat-form-field>
+    <button (click)="submitRegistration()" mat-button color="primary">Submit</button>
+    <button routerLink="/login" mat-button color="primary">Back to log in</button>
+  </form>
+</div>
+

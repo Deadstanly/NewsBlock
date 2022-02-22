@@ -1,0 +1,17 @@
+<form [formGroup]="myForm" class="form-menu">
+  <mat-form-field appearance="fill">
+    <mat-label>title</mat-label>
+    <input matInput formControlName="title">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>link</mat-label>
+    <input matInput formControlName="link">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>country</mat-label>
+    <input matInput formControlName="country">
+  </mat-form-field>
+  <button [disabled]="myForm.invalid" class="btn-add-news" (click)="submit()" mat-raised-button color="primary">Add news</button>
+  <button class="btn-close" (click)="closeModal()"  mat-stroked-button color="warn">Close modal</button>
+</form>
+
