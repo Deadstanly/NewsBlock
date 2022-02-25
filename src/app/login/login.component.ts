@@ -19,9 +19,8 @@ export class LoginComponent implements OnInit {
       'password': ['', [Validators.required]]
     })
   }
-  
-  ngOnInit(): void {
 
+  ngOnInit(): void {
 
   }
 
@@ -29,7 +28,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.myForm.value).subscribe({
         next: (data) => {
           const user = UserInfo.getInstance();
-          user.email = this.myForm.value;
+          user.email = this.myForm.value.email;
           user.token = data.token;
           this.router.navigateByUrl('dashboard').then();
         },

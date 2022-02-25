@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserInfo} from "../models/userInfo";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -8,9 +9,10 @@ import {UserInfo} from "../models/userInfo";
 })
 export class DashboardComponent implements OnInit {
 
+
   public user: UserInfo;
 
-  constructor() { }
+  constructor( private router: Router) {}
 
   ngOnInit(): void {
     this.user = UserInfo.getInstance();
@@ -18,7 +20,7 @@ export class DashboardComponent implements OnInit {
 
   public logOut():void {
     this.user.exit();
+    this.router.navigateByUrl('login').then()
   }
-
 
 }

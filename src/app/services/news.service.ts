@@ -27,7 +27,16 @@ export class NewsService {
 
   public editNews(id: number, news: INews): Observable<INews> {
     return this.http.put<INews>(`${environment.localDBUrl}/news/${id}`, news)
-
   }
+
+  public addNewsToFavorites(userFavoritesData): Observable<void> {
+    return this.http.post<void>(`${environment.localDBUrl}/users/addNewsToUser`, userFavoritesData)
+  }
+
+  public getUserByEmail(email: string): Observable<INews> {
+    return this.http.get<INews>(`${environment.localDBUrl}/users/${email}`)
+  }
+
+
 
 }

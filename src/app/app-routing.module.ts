@@ -4,6 +4,7 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {NewsComponent} from "./news/news.component";
 import {LoginComponent} from "./login/login.component";
 import {RegistrationComponent} from "./registration/registration.component";
+import {FavoritesNewsComponent} from "./news/favorites-news/favorites-news.component";
 
 const routes: Routes = [
   {
@@ -25,7 +26,11 @@ const routes: Routes = [
     children: [{
       path: 'news',
       component: NewsComponent
-    }]
+    },
+    {
+      path: 'favorites-news',
+      component: FavoritesNewsComponent
+    }],
   },
 ];
 

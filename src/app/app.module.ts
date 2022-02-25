@@ -21,6 +21,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UpdateNewsComponent } from './news/update-news/update-news.component';
+import { FavoritesNewsComponent } from './news/favorites-news/favorites-news.component';
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -31,24 +33,26 @@ import { UpdateNewsComponent } from './news/update-news/update-news.component';
     LoginComponent,
     RegistrationComponent,
     UpdateNewsComponent,
+    FavoritesNewsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatMenuModule,
-    MatButtonModule,
-    HttpClientModule,
-    MatPaginatorModule,
-    MatTableModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatMenuModule,
+        MatButtonModule,
+        HttpClientModule,
+        MatPaginatorModule,
+        MatTableModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatCardModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

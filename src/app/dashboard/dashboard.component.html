@@ -5,6 +5,10 @@
         <mat-icon class="fas fa-rss"></mat-icon>
         <span>News</span>
       </button>
+      <button [routerLink]="'favorites-news'" mat-menu-item>
+        <mat-icon class="fa-solid fa-face-grin-stars"></mat-icon>
+        <span>Favorites News</span>
+      </button>
       <button (click)="logOut()" mat-menu-item>
         <mat-icon class="fas fa-sign-out-alt"></mat-icon>
         <span>Log out</span>

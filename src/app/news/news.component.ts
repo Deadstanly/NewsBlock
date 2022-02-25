@@ -7,6 +7,8 @@ import {MatDialog} from "@angular/material/dialog";
 import {shareReplay} from "rxjs";
 import {AddNewsComponent} from "./add-news/add-news.component";
 import {UpdateNewsComponent} from "./update-news/update-news.component";
+import {IUser} from "../models/user";
+import {UserInfo} from "../models/userInfo";
 
 @Component({
   selector: 'app-news',
@@ -51,7 +53,6 @@ export class NewsComponent implements OnInit {
   }
 
   editPost(news: INews){
-    console.log(news)
     const updatePost = this.dialog.open(UpdateNewsComponent, {
      width: '400px', height: '400px',
      data: {id: news.id, title: news.title, country: news.country, link: news.link},
@@ -62,7 +63,13 @@ export class NewsComponent implements OnInit {
     });
   }
 
-  addToFavorites() {
-
+  addToFavorites(news: INews) {
+      const emailUser = UserInfo.getInstance();
+      const userFavoritesData = {
+        newsId: news.id,
+        email: emailUser.email
+      }
+      this.newsService.addNewsToFavorites(userFavoritesData).subscribe();
   }
+
 }
