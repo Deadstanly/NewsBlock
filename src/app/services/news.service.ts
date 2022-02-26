@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {INews} from "../models/news";
 import {environment} from "../../environments/environment";
+import {IUser} from "../models/user";
 
 
 @Injectable({
@@ -33,8 +34,12 @@ export class NewsService {
     return this.http.post<void>(`${environment.localDBUrl}/users/addNewsToUser`, userFavoritesData)
   }
 
-  public getUserByEmail(email: string): Observable<INews> {
-    return this.http.get<INews>(`${environment.localDBUrl}/users/${email}`)
+  public getUserByEmail(email: string): Observable<IUser> {
+    return this.http.get<IUser>(`${environment.localDBUrl}/users/${email}`)
+  }
+
+  public deleteUserNews(id: number): Observable<void> {
+    return this.http.delete<void>(`${environment.localDBUrl}/users/deleteMyNew/${id}`)
   }
 
 

@@ -33,5 +33,4 @@ export class RegistrationComponent implements OnInit {
       complete: () => {{}}
     })
   }
-
 }

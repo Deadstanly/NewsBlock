@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
           const user = UserInfo.getInstance();
           user.email = this.myForm.value.email;
           user.token = data.token;
-          this.router.navigateByUrl('dashboard').then();
+          this.router.navigateByUrl('dashboard/news').then();
         },
         error: () => {alert("Error")},
         complete: () => {{}}

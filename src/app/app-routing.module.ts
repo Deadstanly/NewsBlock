@@ -5,6 +5,7 @@ import {NewsComponent} from "./news/news.component";
 import {LoginComponent} from "./login/login.component";
 import {RegistrationComponent} from "./registration/registration.component";
 import {FavoritesNewsComponent} from "./news/favorites-news/favorites-news.component";
+import {AuthGuard} from "./guards/auth.guard";
 
 const routes: Routes = [
   {
@@ -31,7 +32,8 @@ const routes: Routes = [
       path: 'favorites-news',
       component: FavoritesNewsComponent
     }],
-  },
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({
